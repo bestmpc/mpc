@@ -119,16 +119,16 @@ dircreate
         echo -e "Scvps Bot Panel Installer
         "
         [[ ! -f /root/ResBotAuth ]] && {
-        echo -ne "Input your Bot TOKEN : 6372923640:AAF3C4y2xWIY7cjOfEFQ98w2cA5zYqmePQM"
+        echo -ne "Input your Bot TOKEN : "
         read bot_tkn
         echo "Toket='$bot_tkn'" > /root/ResBotAuth
-        echo -ne "Input your Admin ID : 1678184161"
+        echo -ne "Input your Admin ID : "
         read adm_ids
         echo "Admin_ID=$adm_ids" >> /root/ResBotAuth
         }
         echo -ne "Username admin panel use '@' [Ex: @medusa_cha] : "
         read admin_pnl
-        [[ -z $admin_pnl ]] && admin_pnl="@medusa_cha"
+        [[ -z $admin_pnl ]] && admin_pnl=""
         echo ""
         echo -ne "Limit trial for reseller create user trial [default:1] : "
         read limit_pnl
@@ -136,7 +136,7 @@ dircreate
         echo ""
         echo -ne "Your name store [dafult: MPC-STORE] : "
         read store_pnl
-        [[ -z $store_pnl ]] && store_pnl="MPC-STORE"
+        [[ -z $store_pnl ]] && store_pnl=""
         echo ""
 cat <<-EOF >/etc/.maAsiss/bot.conf
 admin_panel : $admin_pnl
