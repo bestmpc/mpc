@@ -4,7 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/kulo-sinten/mpek/main/REG/ipvps > /root/tmp
+    curl -sS https://raw.githubusercontent.com/bestmpc/access/main/ip > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -22,7 +22,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/kulo-sinten/mpek/main/REG/ipvps | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/bestmpc/access/main/ip | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -39,7 +39,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/kulo-sinten/mpek/main/REG/ipvps | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/bestmpc/access/main/ip | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -69,7 +69,7 @@ portsshws=`cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '
 if [ -f "/etc/systemd/system/aNzVPNsshws.service" ]; then
 clear
 else
-wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/kulo-sinten/mpek/main/ssh/proxy3.js"
+wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/bestmpc/mpc/main/ssh/proxy3.js"
 cat <<EOF> /etc/systemd/system/aNzVPNsshws.service
 [Unit]
 Description=WSenabler
@@ -96,7 +96,7 @@ PID=`ps -ef |grep -v grep | grep sshws |awk '{print $2}'`
 if [[ ! -z "${PID}" ]]; then
 echo "Already ON !"
 else
-wget -q -O /usr/bin/ssh-wsenabler "https://raw.githubusercontent.com/kulo-sinten/mpek/main/ssh/sshws-true.sh" && chmod +x /usr/bin/ssh-wsenabler && /usr/bin/ssh-wsenabler
+wget -q -O /usr/bin/ssh-wsenabler "https://raw.githubusercontent.com/bestmpc/mpc/main/ssh/sshws-true.sh" && chmod +x /usr/bin/ssh-wsenabler && /usr/bin/ssh-wsenabler
 systemctl daemon-reload >/dev/null 2>&1
 systemctl enable aNzVPNsshws.service >/dev/null 2>&1
 systemctl start aNzVPNsshws.service >/dev/null 2>&1

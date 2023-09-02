@@ -4,7 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/kulo-sinten/mpek/main/REG/ipvps > /root/tmp
+    curl -sS https://raw.githubusercontent.com/bestmpc/access/main/ip > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -22,7 +22,7 @@ BURIQ () {
 }
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/kulo-sinten/mpek/main/REG/ipvps | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/bestmpc/access/main/ip | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -39,7 +39,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/kulo-sinten/mpek/main/REG/ipvps | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/bestmpc/access/main/ip | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -51,7 +51,7 @@ red='\e[1;31m'
 green='\e[1;32m'
 NC='\e[0m'
 clear
-curl -sS https://raw.githubusercontent.com/kulo-sinten/mpek/main/resources/ascii-home
+curl -sS https://raw.githubusercontent.com/bestmpc/mpc/main/resources/ascii-home
 echo "Add Domain"
 echo "Progress..."
 sleep 2
@@ -70,9 +70,9 @@ fi
 
 source /root/scdomain
 SUB_DOMAIN=$peler
-DOMAIN=aww.com
-CF_ID=nandorz@gmail.com
-CF_KEY=0bf3a3094ea9199e9c2cf90714425191
+DOMAIN=bestmpc.xyz
+CF_ID=argantara627@gmail.com
+CF_KEY=1rf6L2eWfqDv5igtc1cUYUsIeXZw_fuJARKEMcvV
 set -euo pipefail
 IP=$(curl -sS ifconfig.me);
 echo "Updating DNS for ${SUB_DOMAIN}..."
