@@ -119,14 +119,14 @@ dircreate
         echo -e "Scvps Bot Panel Installer
         "
         [[ ! -f /root/ResBotAuth ]] && {
-        echo -ne "Input your Bot TOKEN : "
+        echo -ne "Input your Bot TOKEN : 6372923640:AAF3C4y2xWIY7cjOfEFQ98w2cA5zYqmePQM"
         read bot_tkn
         echo "Toket='$bot_tkn'" > /root/ResBotAuth
-        echo -ne "Input your Admin ID : "
+        echo -ne "Input your Admin ID : ‘1678184161’"
         read adm_ids
         echo "Admin_ID=$adm_ids" >> /root/ResBotAuth
         }
-        echo -ne "Username admin panel use '@' [Ex: @medusa_cha] : "
+        echo -ne "Username admin panel use '@' [Ex: @medusa_cha] : @medusa_cha"
         read admin_pnl
         [[ -z $admin_pnl ]] && admin_pnl=""
         echo ""
